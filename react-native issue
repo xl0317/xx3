@@ -1,0 +1,43 @@
+import React, { Component } from 'react';
+var SearchPage=require('./SearchPage');
+'use strict';
+import {
+    AppRegistry,
+    StyleSheet,
+    NavigatorIOS,
+    Text,
+    View
+} from 'react-native';
+class HelloWorld extends Component{
+    render(){
+        return(
+               <View>
+               <Text style={styles.text}>Hello World!</Text>
+               </View>
+               );
+        
+    }
+    
+}
+class PropertyFinder extends Component {
+    render() {
+        return(<NavigatorIOS style={styles.container}
+               initialRoute={{title:'Proper Finder',component:HelloWorld,}}/>
+               
+               );
+    }
+}
+
+const styles = StyleSheet.create({
+                                 text:{
+                                 color: 'black',
+                                 backgroundColor:'white',
+                                 fontSize: 30,
+                                 margin :80,
+                                 },
+                                 container:{
+                                 flex:1,
+                                 },
+                                 });
+
+AppRegistry.registerComponent('PropertyFinder', () => PropertyFinder);
